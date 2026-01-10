@@ -1,25 +1,26 @@
-# PDF Parser
-A Python utility to extract text from each page of a PDF file and save every page as a separate `.txt` file.
+# PDF Parser (Streamlit App)
+A simple Streamlit-based web application that extracts text from each page of a PDF file and allows users to download the extracted content as text files.
 
 ## Features
-- Page-wise text extraction from PDFs
-- Automatic output directory creation
-- Simple and easy-to-run script
+- Upload PDF files through a web interface
+- Extract text page-by-page
+- Preview extracted text
+- Download extracted pages as a ZIP file
 
 ## Project Structure
 
 ```
 pdf-parser/
-├── pdf_reader.py
-├── requirements.txt
-├── Extracted Pages/
-│   ├── page_1.txt
-│   ├── page_2.txt
-│   └── ...
+├── app.py               # Streamlit application
+├── pdf_reader.py        # Core PDF extraction logic (CLI)
+├── requirements.txt     # Project dependencies
+├── Extracted Pages/     # Output directory
 ├── .gitignore
 └── README.md
 ```
 ## Requirements
+- Python 3.x
+- Streamlit
 - PyPDF2
 
 Install dependencies:
@@ -27,22 +28,26 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
-## How to Run
-1. Place your PDF file in the project root
-2. Update the file name in `pdf_reader.py` if needed
-3. Run:
+## Run Locally
+
 ```bash
-python pdf_reader.py
+streamlit run app.py
 ```
 
-## Output
-- Extracted text files are saved in the `Extracted Pages/` folder
-- Each text file corresponds to one page of the PDF
+The app will be available at:
+```
+http://localhost:8501
+```
+
+## Usage
+1. Upload a PDF file
+2. Click **Extract Text**
+3. Preview extracted text
+4. Download all extracted pages as a ZIP file
 
 ## Notes
 - Works with text-based PDFs
 - Scanned PDFs require OCR (not included)
-
 
 ## Author
 Amaljosh Maadhav J
